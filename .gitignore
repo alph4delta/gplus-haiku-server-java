@@ -1,6 +1,22 @@
+# Compiled Files
 *.class
+bin
+build
+
+# DS Store (Mac)
+.DS_Store
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Gradle
+.gradle
+gradle
+gradlew
+gradlew.bat
+
+# Client Secrets
+client_secrets.json
+config.properties
