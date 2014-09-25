@@ -52,6 +52,7 @@ public class SignOutServlet extends HttpServlet {
     }
     logger.log(Level.INFO, "Sign out succeeded");
     response.setStatus(HttpServletResponse.SC_OK);
-    response.getWriter().print("{ msg: \"Sign out complete\" }");
+    response.setContentType(HaikuPlus.JSON_MIMETYPE);
+    response.getWriter().print("{ \"msg\": \"Sign out complete\" }");
   }
 }

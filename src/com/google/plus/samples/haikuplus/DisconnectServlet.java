@@ -97,7 +97,8 @@ public class DisconnectServlet extends HttpServlet {
 
     logger.log(Level.INFO, "Disconnect succeeded");
     response.setStatus(HttpServletResponse.SC_OK);
-    response.getWriter().print("{ msg: \"Disconnect complete\" }");
+    response.setContentType(HaikuPlus.JSON_MIMETYPE);
+    response.getWriter().print("{ \"msg\": \"Disconnect complete\" }");
   }
 
   private void revokeToken(String token) throws IOException {
