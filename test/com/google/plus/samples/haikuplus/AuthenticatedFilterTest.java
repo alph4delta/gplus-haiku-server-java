@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -365,7 +365,7 @@ public class AuthenticatedFilterTest {
     verify(mockResponse).addHeader(TestUtils.RESPONSE_ID_HEADER_NAME, TestUtils.ID_REQUEST_HEADER);
     verify(mockResponse).setStatus(401);
     verify(mockChain, never()).doFilter(mockRequest, mockResponse);
-    
+
     TestUtils.cleanUp();
   }
 
@@ -402,7 +402,7 @@ public class AuthenticatedFilterTest {
     TestUtils.mockHttpRequestResponsePair(mockRequest, mockResponse);
 
     TestUtils.setMockRequestHeaders(mockRequest, false, false);
-    
+
     // Mock the client API call to indicate the missing credentials
     FilterChain mockChain = mock(FilterChain.class);
     doThrow(new Authenticate.InvalidAccessTokenException())

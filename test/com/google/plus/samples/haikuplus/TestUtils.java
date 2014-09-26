@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,7 +117,7 @@ public final class TestUtils {
   // Special values for use when making Google API calls
   static final String ME = "me";
   static final String VISIBLE = "visible";
-  
+
   /**
    * Reads the client secret configuration file.
    *
@@ -146,7 +146,7 @@ public final class TestUtils {
     }
     return clientSecrets.getWeb().getClientSecret();
   }
-  
+
   /**
    * Creates and returns a simple AuthenticatedFilter object for testing
    */
@@ -164,7 +164,7 @@ public final class TestUtils {
       }
 
       @Override
-      GoogleAuthorizationCodeTokenRequest createTokenExchanger(String authorization, 
+      GoogleAuthorizationCodeTokenRequest createTokenExchanger(String authorization,
           String redirectUri) {
         return mockTokenRequest;
       }
@@ -392,7 +392,7 @@ public final class TestUtils {
 
   /**
    * Creates a directed edge from the test user to the author
-   * @throws UserNotFoundException 
+   * @throws UserNotFoundException
    */
   static void mockFilterAuthorEdge(String testUserId, String authorId)
       throws UserNotFoundException {

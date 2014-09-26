@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,8 @@ public class User extends Jsonifiable {
 
   /**
    * Used to determine whether the User's cached Google data is "fresh" (less than one day old).
-   * 
-   * Note: You might prefer an alternate library for managing time in your application. We chose 
+   *
+   * Note: You might prefer an alternate library for managing time in your application. We chose
    * Date for brevity in the sample.
    */
   @Expose
@@ -73,8 +73,8 @@ public class User extends Jsonifiable {
 
   /**
    * 1 day in milliseconds for cached data calculations (1000 * 60 * 60 * 24).
-   * 
-   * Note: This is not a recommended way to manage time comparisons. However, we are using it for 
+   *
+   * Note: This is not a recommended way to manage time comparisons. However, we are using it for
    * brevity in the sample.
    */
   private static final Long ONE_DAY_IN_MS = 86400000L;

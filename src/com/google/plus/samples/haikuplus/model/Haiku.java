@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,8 +78,8 @@ public class Haiku extends Jsonifiable {
 
   /**
    * Timestamp of the haiku.
-   * 
-   * Note: You might prefer an alternate library for managing time in your application. We chose 
+   *
+   * Note: You might prefer an alternate library for managing time in your application. We chose
    * Date for brevity in the sample.
    */
   @Expose
