@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = "com.google.plus.samples.haikuplus.HaikuPlus"
+
+dependencies {
+    compile 'org.mortbay.jetty:jsp-2.1:6.0.0'
+    compile 'org.mortbay.jetty:jetty:6.1.26'
+    
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+    
+    compile 'commons-logging:commons-logging:1.1.1'
+    
+    compile 'com.google.api-client:google-api-client:1.17.0-rc'
+    compile 'com.google.api-client:google-api-client-gson:1.17.0-rc'
+    compile 'com.google.apis:google-api-services-plus:v1-rev162-1.17.0-rc'
+    
+    compile 'com.google.code.gson:gson:2.1'
+    
+    compile 'org.mockito:mockito-all:+'
+    compile 'junit:junit:+'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDirs = ["src"]
+    }
+    resources {
+      srcDirs = ["src"]
+    }
+  }
+  test {
+    java {
+      srcDirs = ["test"]
+    }
+  }
+}
