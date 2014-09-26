@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,7 +145,7 @@ public class DataStore {
   }
 
   /**
-   * Updates an existing user credential in the list, or adds a new user credential to the list 
+   * Updates an existing user credential in the list, or adds a new user credential to the list
    * of credentials, referenced by the user's Google ID.
    *
    * @param googleId the Google ID of the user to authorize.

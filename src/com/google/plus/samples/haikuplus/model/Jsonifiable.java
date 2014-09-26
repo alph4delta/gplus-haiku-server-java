@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,7 +139,7 @@ public abstract class Jsonifiable {
   }
 
   /**
-   * Custom annotation to indicate read-only access to Gson. 
+   * Custom annotation to indicate read-only access to Gson.
    */
   @Retention(RetentionPolicy.RUNTIME)
   public @interface ReadOnly {}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,10 +97,10 @@ public class Authenticate {
 
   /**
    * Client secret configuration.  This is read from the client_secrets.json file.
-   * 
+   *
    */
   private static GoogleClientSecrets clientSecrets;
-  
+
   /**
    * This is the default redirect URI for web applications and tells the browser to return
    * to the parent of the dialog. This value is used to validate a redirect URI provided in
@@ -108,7 +108,7 @@ public class Authenticate {
    * explained in the OAuth specification (http://tools.ietf.org/html/rfc6749#section-10.6).
    */
   private static final String WEB_REDIRECT_URI = "postmessage";
-  
+
   /**
    * This is the default redirect URI for installed applications and is the equivalent of
    * a "null" value. This value is used to validate a redirect URI provided in
@@ -215,7 +215,7 @@ public class Authenticate {
   public static String getClientId() {
      return clientSecrets.getWeb().getClientId();
   }
-  
+
   /**
    * This is the Client secret that you generated in the API Console.  It is stored
    * in the client secret JSON file.
@@ -224,7 +224,7 @@ public class Authenticate {
   public static String getClientSecret() {
      return clientSecrets.getWeb().getClientSecret();
   }
-  
+
   /**
    * Authenticates a user by associating this session with a user based on a provided ID token
    * {@code idAuth} and by associating a user with valid credentials based on a provided
@@ -243,24 +243,24 @@ public class Authenticate {
     GoogleCredential credential = null;
 
     // Isolate the authorization piece of the relevant headers, if they exist.
-    String codeAuth = 
+    String codeAuth =
         parseAuthorizationHeader(request, CODE_AUTHORIZATION_HEADER_NAME, CODE_REGEX, 1);
     String idAuth =
         parseAuthorizationHeader(request, BEARER_AUTHORIZATION_HEADER_NAME, BEARER_REGEX, 1);
-    String redirectUri = 
+    String redirectUri =
         parseAuthorizationHeader(request, CODE_AUTHORIZATION_HEADER_NAME, CODE_REGEX, 2);
-    
+
     // Must be one of these two values, correct to INSTALLED otherwise.
     if (!WEB_REDIRECT_URI.equals(redirectUri)) {
       redirectUri = INSTALLED_REDIRECT_URI;
     }
-    
+
     if (codeAuth != null) {
       // The request supplied an authorization header, so we process the credentials before
       // attempting to service the request. If the credentials are valid, googleUserId will
       // be assigned the Google ID of the authorized user, and the credentials will be
       // stored in the DataStore.
-      GoogleTokenResponse tokenResponse = 
+      GoogleTokenResponse tokenResponse =
           exchangeAuthorizationCode(codeAuth, redirectUri, response);
       if (tokenResponse != null) {
         credential =
@@ -590,7 +590,7 @@ public class Authenticate {
         }
       }
     }
-    
+
     return auth;
   }
 
@@ -725,11 +725,11 @@ public class Authenticate {
   /**
    * Creates a token verifier object using the client secret values provided by client_secrets.json.
    *
-   * @param authorization the authorization code to be exchanged for a bearer token once verified 
+   * @param authorization the authorization code to be exchanged for a bearer token once verified
    * @param redirectUri the redirect URI to be used for token exchange, from the APIs console.
    */
   @VisibleForTesting
-  GoogleAuthorizationCodeTokenRequest createTokenExchanger(String authorization, 
+  GoogleAuthorizationCodeTokenRequest createTokenExchanger(String authorization,
       String redirectUri) {
     return new GoogleAuthorizationCodeTokenRequest(HaikuPlus.TRANSPORT,
         HaikuPlus.JSON_FACTORY,

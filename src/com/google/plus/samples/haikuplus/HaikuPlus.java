@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public class HaikuPlus {
 
   /**
    * Register all endpoints that the server will handle.
-   * 
+   *
    * @param args Command-line arguments.
    * @throws Exception from Jetty if the component fails to start
    */
@@ -90,7 +90,7 @@ public class HaikuPlus {
     sessionManager.setSessionCookie(Authenticate.SESSION_ID_NAME);
     sessionHandler.setSessionManager(sessionManager);
     context.setSessionHandler(sessionHandler);
-    
+
     // Read the configuration properties
     readConfigProperties();
 
@@ -114,12 +114,12 @@ public class HaikuPlus {
     server.start();
     server.join();
   }
-  
+
   public static String getAppBaseUrl() {
     if (appBaseUrl == null) {
       readConfigProperties();
     }
-    
+
     return appBaseUrl;
   }
 
@@ -127,15 +127,15 @@ public class HaikuPlus {
   static  void setDemoMode(boolean demo) {
     demoMode = Boolean.valueOf(demo);
   }
-  
+
   public static boolean isDemoMode() {
     if (demoMode == null) {
       readConfigProperties();
     }
-    
+
     return demoMode != null && demoMode;
   }
-  
+
   /**
    * Reads the configuration.properties file and sets the member fields accordingly.
    * @throws RuntimeException if there is an IOException reading the file.

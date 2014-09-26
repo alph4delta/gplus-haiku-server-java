@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Google Inc. All Rights Reserved.
+ * Copyright 2014 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ public class DisconnectServlet extends HttpServlet {
    *
    * Deletes cached Google+ data for the current user.
    * Revokes any currently held Google OAuth tokens.
-   * Disassociates any authentication information with the current session. 
+   * Disassociates any authentication information with the current session.
    * Deletes all haikus by this user.
    *
    * @throws IOException if the response fails to fetch its writer
